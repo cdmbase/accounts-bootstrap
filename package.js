@@ -1,8 +1,8 @@
 Package.describe({
-  name: 'std:accounts-bootstrap',
-  version: '1.1.2',
+  name: 'veeramarni:accounts-bootstrap',
+  version: '1.2.8',
   summary: 'Bootstrap UI - Accounts UI for React in Meteor 1.3',
-  git: 'https://github.com/std/accounts-bootstrap',
+  git: 'https://github.com/veeramarni/accounts-bootstrap',
   documentation: 'README.md'
 });
 
