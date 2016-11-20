@@ -1,5 +1,6 @@
 import React from 'react';
 import { Accounts, STATES } from 'meteor/std:accounts-ui';
+import {  FormGroup, FormControl, ControlLabel, Row, Col, Alert } from 'react-bootstrap'
 
 /**
  * Form.propTypes = {
@@ -132,21 +133,21 @@ class Field extends Accounts.ui.Field {
     } = this.props;
     const { mount = true } = this.state;
     return mount ? (
-      <div className={["form-group", required ? "required" : ""].join(' ')}>
-        <label htmlFor={ id } className="form-control-label control-label">{ label }</label>
-        <input id="password" className="form-control" name="password" style={{display: 'none'}} />
-        <input id={ id }
-               className="form-control"
-               name={ id }
-               type={ type }
-               ref={ (ref) => this.input = ref }
-               autoCapitalize={ type == 'email' ? 'none' : false }
-               autoCorrect="off"
-               onChange={ onChange }
-               placeholder={ hint }
-               defaultValue={ defaultValue }
-               required={required ? "required" : ""} />
-      </div>
+        <FormGroup className={ required ? "required" : ""}>
+          <ControlLabel htmlFor={ id }>{label}</ControlLabel>
+          <FormControl id={id}
+                       name={id}
+                       type={type}
+                       ref={ (ref) => this.input = ref }
+                       autoCapitalize={ type == 'email' ? 'none' : false }
+                       autoCorrect="off"
+                       onChange={ onChange }
+                       placeholder={ hint }
+                       defaultValue={ defaultValue }
+                       required={required ? "required" : ""}
+
+          />
+        </FormGroup>
     ) : null;
   }
 }
